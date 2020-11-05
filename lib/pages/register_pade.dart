@@ -4,9 +4,8 @@ import 'package:chat_app/widgets/labels.dart';
 import 'package:chat_app/widgets/logo.dart';
 import 'package:flutter/material.dart';
 
-
 class RegisterPage extends StatelessWidget {
-@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xffF2F2F2),
@@ -14,7 +13,7 @@ class RegisterPage extends StatelessWidget {
           child: SingleChildScrollView(
             physics: BouncingScrollPhysics(),
             child: Container(
-              height: MediaQuery.of(context).size.height*0.9,
+              height: MediaQuery.of(context).size.height * 0.9,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -75,7 +74,6 @@ class __FormState extends State<_Form> {
           presionar: () {
             print(emailCtrl.text);
             print(passCtrl.text);
-
           },
         ),
       ]),
