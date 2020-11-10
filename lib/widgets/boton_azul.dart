@@ -18,7 +18,7 @@ const BotonAzul({
     return RaisedButton(
         elevation: 2,
         highlightElevation: 5,
-        color: Colors.blue,
+        color: Colors.orange[300],
         shape: StadiumBorder(),
         onPressed: this.presionar,
         child: Container(

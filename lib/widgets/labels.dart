@@ -20,7 +20,7 @@ class Labels extends StatelessWidget {
         GestureDetector(
           child: Text(this.label2,
               style: TextStyle(
-                  color: Colors.blue[600],
+                  color: Colors.green[400],
                   fontSize: 18,
                   fontWeight: FontWeight.bold)),
           onTap: () {

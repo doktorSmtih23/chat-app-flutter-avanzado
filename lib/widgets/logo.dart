@@ -10,13 +10,13 @@ class Logo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 170,
+      width: 195,
       margin: EdgeInsets.only(top: 50),
       child: Column(
         children: <Widget>[
-          Image(image: AssetImage('assets/tag-logo.png')),
+          Image(image: AssetImage('assets/tennis_ball.png')),
           SizedBox(height: 20),
-          Text(this.text, style: TextStyle(fontSize: 30)),
+          Text(this.text, style: TextStyle(fontSize: 30,fontWeight: FontWeight.w300)),
         ],
       ),
     );
