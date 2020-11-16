@@ -27,18 +27,24 @@ class _UsuariosPageState extends State<UsuariosPage> {
     super.initState();
   }
 
+  
+
   @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthService>(context);
     final socketService = Provider.of<SocketService>(context);
     final usuario = authService.usuario;
+   
+
+
 
     return Scaffold(
         appBar: AppBar(
           title: Align(
-            child: Text(
+              child: Text(
               usuario.nombre,
-              style: TextStyle(color: Colors.black87),
+              style: TextStyle(color: Colors.black87,fontSize: 24,),
+              
             ),
           ),
           elevation: 1,
@@ -56,10 +62,12 @@ class _UsuariosPageState extends State<UsuariosPage> {
           ),
           actions: <Widget>[
             Container(
+              height: 20,
+              width: 20,
               margin: EdgeInsets.only(right: 10),
               child: (socketService.serverStatus == ServerStatus.Online)
-                  ? Icon(Icons.check_circle, color: Colors.blue[400])
-                  : Icon(Icons.offline_bolt, color: Colors.red),
+                  ? Image.asset('assets/azu.png')
+                  : Image.asset('assets/redball.png'),
             )
           ],
         ),
@@ -75,6 +83,8 @@ class _UsuariosPageState extends State<UsuariosPage> {
         ));
   }
 
+  
+
   ListView _listViewUsuarios() {
     return ListView.separated(
       physics: BouncingScrollPhysics(),
@@ -89,18 +99,18 @@ class _UsuariosPageState extends State<UsuariosPage> {
       title: Text(usuario.nombre),
       subtitle: Text(usuario.email),
       leading: CircleAvatar(
-        child: Text(usuario.nombre.substring(0, 2)),
-        backgroundColor: Colors.blue[100],
+        backgroundImage: AssetImage('assets/tennis_ball.png'),
+        child: Text(usuario.nombre.substring(0, 2),style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+        backgroundColor: Colors.orange[100],
       ),
       trailing: Container(
-        width: 10,
-        height: 10,
-        decoration: BoxDecoration(
-            color: usuario.online ? Colors.green[300] : Colors.red,
-            borderRadius: BorderRadius.circular(100)),
+        width: 20,
+        height: 20,
+        child: usuario.online ? Image.asset('assets/tennis_ball.png') :Image.asset('assets/greyball.png'),
+            
       ),
       onTap: () {
-        final chatService = Provider.of<ChatService>(context, listen: false);
+        final chatService = Provider.of<ChatService>(context,listen:false);
         chatService.usuarioPara = usuario;
         Navigator.pushNamed(context, 'chat');
       },
