@@ -38,6 +38,8 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
     _cargarHistorial(this.chatService.usuarioPara.uid);
   }
 
+  
+
   void _cargarHistorial(String usuarioID) async {
     List<Mensaje> chat = await this.chatService.getChat(usuarioID);
 
@@ -75,19 +77,20 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
           backgroundColor: Colors.white,
           title: Column(
             children: <Widget>[
-              CircleAvatar(
-                child: Text(
-                  usuarioPara.nombre.substring(0, 2),
-                  style: TextStyle(fontSize: 12),
-                ),
-                backgroundColor: Colors.blue[100],
-                maxRadius: 14,
-              ),
+              // CircleAvatar(
+              //   backgroundImage: AssetImage('assets/tennis_ball.png'),
+              //   child: Text(
+              //     usuarioPara.nombre.substring(0, 2),
+              //     style: TextStyle(fontSize: 14,color: Colors.white,fontWeight: FontWeight.bold),
+              //   ),
+              //   backgroundColor: Colors.orange[100],
+              //   maxRadius: 14,
+              // ),
               SizedBox(
                 height: 3,
               ),
               Text(usuarioPara.nombre,
-                  style: TextStyle(color: Colors.black87, fontSize: 12))
+                  style: TextStyle(color: Colors.black87, fontSize: 24))
             ],
           ),
           centerTitle: true,
